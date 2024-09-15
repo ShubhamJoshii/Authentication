@@ -89,7 +89,7 @@ const Content = () => {
       <div id="Methods">
         {Methods.map((curr, id) => {
           return (
-            <a key={id} href={`http://localhost:5000${curr.URL}`}>
+            <a key={id} href={`.${curr.URL}`}>
               <img src={curr.image} alt={"MethodLogin"} />
             </a>
           );
