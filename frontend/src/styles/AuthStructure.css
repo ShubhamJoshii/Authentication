@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#AuthStructure {
+  display: flex;
+  height: 100%;
+  gap: 80px;
+  width: min(1350px, 100vw);
+  padding: 0 40px 30px 40px;
+  box-sizing: border-box;
+  margin: auto;
+  align-items: center;
+  #formContainer {
+    position: relative;
+    flex: 1;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #313131;
+    gap: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    .loading {
+      position: absolute !important;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+    h1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin: 0;
+      font-size: 45px;
+    }
+    p {
+      margin: 0;
+    }
+    #emailVerify {
+      display: flex;
+      gap: 4px;
+      font-size: 13px;
+      margin-top: -10px;
+      span:first-child {
+        color: #3869eb;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+    #backBtn {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: black;
+      font-size: 12px;
+      svg {
+        font-size: 18px;
+      }
+    }
+    #invalid {
+      border: 1.5px solid red;
+      .labelLine {
+        color: red !important;
+      }
+    }
+    form {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      #inputCollection {
+        display: flex;
+        gap: 10px;
+        .inputContainer {
+          flex: 1;
+          .inputContainer-inner {
+            flex: 1;
+          }
+        }
+      }
+      #formErrorMsg {
+        font-size: 12px;
+        color: red;
+        text-align: end;
+        margin: 0;
+        margin: 4px 4px 0 0;
+      }
+      .inputContainer {
+        .inputContainer-inner {
+          position: relative;
+          border: 1px solid #313131;
+          border-radius: 5px;
+          padding: 12px 8px;
+          display: flex;
+          input {
+            background-color: transparent;
+            z-index: 99;
+            position: relative;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+          }
+          #eye {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            cursor: pointer;
+            transform: translate(0, -50%);
+            height: 100%;
+            width: 40px;
+            z-index: 999;
+            /* background-color: rgb(151, 39, 39); */
+            border-radius: 0 4px 4px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .labelLine {
+            position: absolute;
+            top: 50%;
+            transform: translate(20px, -50%);
+            transition: 0.2s ease;
+          }
+
+          &:has(#eye) input {
+            width: calc(100% - 30px);
+          }
+
+          input:focus + .labelLine,
+          input:valid + .labelLine {
+            z-index: 99;
+            color: #3869eb;
+            background-color: white;
+            padding: 0 4px;
+            font-size: 12px;
+            font-weight: bolder;
+            transform: translate(14px, -31px);
+          }
+        }
+      }
+      input[type="submit"] {
+        cursor: pointer;
+        padding: 12px 8px;
+        margin-top: 30px;
+        color: white;
+        border: none;
+        font-weight: 700;
+        letter-spacing: 0.9px;
+        background-color: #3869eb;
+      }
+      #ForgetAndRemember {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        div {
+          display: flex;
+          gap: 6px;
+          input {
+            width: 20px;
+          }
+        }
+      }
+      #Forget {
+        color: #ff8682;
+        text-decoration: none;
+      }
+      #Resend {
+        span {
+          cursor: pointer;
+          font-weight: 700;
+          background: none;
+          border: none;
+          color: #ff8682;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      #TermAndCondition {
+        display: flex;
+        gap: 6px;
+        input {
+          width: 20px;
+        }
+      }
+    }
+    #message {
+      color: red;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    #HaveAccount {
+      text-align: center;
+      font-weight: 500;
+      a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #ff8682;
+      }
+    }
+    #OtherMethods {
+      text-align: center;
+      position: relative;
+      margin: 20px 0;
+      opacity: 0.7;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 0.5px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 38%;
+        left: 0;
+        background-color: #313131;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0.5px;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 38%;
+        background-color: #313131;
+      }
+    }
+    #Methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      a {
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #3869eb;
+        border-radius: 4px;
+        padding: 4px 0;
+        height: 34px;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+  #loginRedirect {
+    width: 100%;
+    background-color: #3869eb;
+    text-align: center;
+    font-size: 20px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-top: 80px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      background-color: #3868ebdc;
+      transform: scale(1.01);
+    }
+  }
+  .Carousel {
+    flex: 1;
+    width: 100%;
+    height: 90%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    img {
+      width: 100%;
+      margin: auto;
+      object-fit: contain;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .react-multi-carousel-dot button {
+      border: none;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+    .react-multi-carousel-dot--active button {
+      background-color: #3869eb;
+      width: 26px !important;
+      border-radius: 9px;
+    }
+  }
+
+  @media only screen and (max-width: 1260px) {
+    flex-direction: column-reverse !important;
+    gap: 20px;
+    #formContainer {
+      min-height: auto;
+      flex: none;
+      gap: 10px;
+      width: 100%;
+      h1 {
+        font-size: 35px;
+      }
+      #labelLine {
+        font-size: 10px;
+      }
+      form {
+        gap: 8px;
+        margin: 10px 0;
+        .inputContainer {
+          .inputContainer-inner {
+            padding: 8px;
+            font-size: 14px;
+
+            input:focus + .labelLine,
+            input:valid + .labelLine {
+              transform: translate(14px, -25px) !important;
+            }
+
+            input[type="submit"] {
+              margin: 14px 0;
+              width: 100%;
+            }
+          }
+        }
+        #ForgetAndRemember {
+          margin-top: 10px;
+          font-size: 12px;
+        }
+      }
+      #TermAndCondition,
+      #HaveAccount {
+        font-size: 14px;
+      }
+      #OtherMethods {
+        font-size: 12px;
+        margin: 14px 0;
+      }
+    }
+    .Carousel {
+      height: 300px;
+      flex: auto;
+      .react-multi-carousel-track {
+        height: 100%;
+      }
+      img {
+        width: auto;
+        margin: auto;
+        height: 90%;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+      }
+      .react-multi-carousel-dot button {
+        height: 8px;
+        width: 8px;
+      }
+    }
+  }
+}
