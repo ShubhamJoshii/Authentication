@@ -18,6 +18,10 @@ app.use(
     cookie: { maxAge: 24 * 60 * 60 * 1000 },
   })
 );
+app.use(cors({
+  origin: process.env.SERVER_URL,
+  credentials: true,
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -26,7 +30,6 @@ app.use(passport.session());
 
 require("./passport");
 
-app.use(cors());
 
 // Cokkies Creation
 app.use(express.json({ limit: "25mb" }));
